@@ -1,0 +1,54 @@
+include mixins
+
+doctype html
+html
+  head
+    meta( charset='utf-8' )
+    title Jascha Ephraim
+    link( rel="stylesheet", href="app.min.css" )
+    script( src="app.min.js" )
+    != livereload_script
+    +analytics()
+
+  body
+    div#wrapper
+      header#main-header
+        div#image-wrapper
+          img#header-image( src=imgUrl( 'mcgyver.jpg' ), alt='Jascha Ephraim' )
+        h1#main-heading Jascha Ephraim
+
+        +social_links( 'social-links', true )
+
+        nav#tag-nav
+          ul
+            each tag_info, tag in tags
+              li: a( href='#' + tag )=tag_info.title
+
+      main#main-body
+        div#item-navs
+          each tag_info, tag in tags
+            nav.item-nav
+              ul
+                each slug in tag_info.content
+                  li: a( href='#' + tag + '/' + slug )= content[ slug ].title
+
+        div#items
+          each tag_info, tag in tags
+            section.tag-items
+              each slug in tag_info.content
+                +article( content[ slug ] )
+
+    footer#main-footer
+      div#contact
+        h2.footer-heading Contact
+        address: a( href='mailto:jascha@jaschaephraim.com' ) jascha@jaschaephraim.com
+        +social_links( 'footer-social-links', true )
+      div#sitemap
+        each tag_info, tag in tags
+          div.footer-list
+            h2.footer-heading= tag_info.title
+            ul
+              each slug in tag_info.content
+                li
+                  - var item = content[ slug ]
+                  +link( item, item.title, 'footer-link' )

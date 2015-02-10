@@ -1,0 +1,339 @@
+// Imports
+
+@import url( 'http://fonts.googleapis.com/css?family=Gafata&subset=all' )
+@import url( 'http://fonts.googleapis.com/css?family=Esteban' )
+@import url( 'http://fonts.googleapis.com/css?family=Droid+Sans+Mono' )
+
+// Root level mixins
+
+// edit()
+global-reset()
+grid()
+font-face( 'logos', 'fonts/logos' )
+
+// Variables
+
+black = #000
+gray = #999
+dark_greenish = #455
+brownish = #8b4d55
+light_brownish = #ad6f77
+dark_purple = #40273c
+light_blue = #d5f2e3
+
+trans_dur = 0.2s
+font_size = 1em
+line_height = font_size * 1.5
+p_margin = line_height / 1.5
+
+// Settings
+
+gutter = 3
+
+// Mixins
+
+serif()
+  font-family 'Esteban', serif
+  font-size 0.95em
+  strong
+    uppercase()
+    font-weight normal
+sans_serif()
+  font-family 'Gafata', sans-serif
+monospace()
+  font-family 'Droid Sans Mono', monospace
+  font-size 0.85em
+icons()
+  font-family logos
+indent()
+  margin ( line_height * 1.5 ) 3em
+
+// Element defaults
+
+html, body
+  height 100%
+
+body
+  sans_serif()
+  letter-spacing 0.01em
+  line-height line_height
+  color dark_purple
+
+p
+  margin p_margin 0
+
+a
+  color brownish
+  text-decoration none
+  transition color trans_dur
+  &:hover
+    color black
+    text-decoration underline
+
+em
+  font-style italic
+
+strong
+  font-weight bold
+
+img
+  display block
+
+blockquote
+  serif()
+  indent()
+  color: black
+
+code
+  monospace()
+  color lighten( dark_greenish, 5% )
+  background lighten( brownish, 93% )
+  border 1px solid lighten( dark_greenish, 72% )
+  padding 0 0.2em
+  border-radius 0.2em
+
+#image-wrapper
+  margin-bottom ( line_height / 2 )
+#main-heading
+  serif()
+  upcase()
+  letter-spacing 0.02em
+  font-size 1.5em
+  margin-bottom ( line_height / 10 )
+#social-links
+  font-size 0.7em
+  line-height 1em
+  margin-bottom ( line_height / 2 )
+  li
+    inline-block()
+    margin-left .5em
+  a
+    color gray
+    &:hover
+      text-decoration none
+      color dark_purple
+.social-icon
+  icons()
+  font-size 1.2em
+  margin-right .1em
+#tag-nav
+  uppercase()
+  a
+    display block
+    &:hover
+      color brownish
+  .current, .current:hover
+    color black
+#item-navs
+  serif()
+  font-size 1.2em
+  a
+    display block
+    color dark_greenish
+    padding ( line_height / 2 ) 0
+  .current
+    color black
+
+.item
+  figure
+    margin-bottom line_height
+  figcaption
+    text-align right
+    font-size .6em
+    line-height 1.5em
+    color gray
+    margin-bottom -1.5em
+    a
+      color light_brownish
+  ol
+    indent()
+    list-style-type decimal
+.article-link
+  serif()
+  uppercase()
+  display block
+
+.current
+  text-decoration underline
+
+#main-footer
+  background light_blue
+  a:hover
+    text-decoration none
+#contact address
+  margin-bottom ( line_height / 2 )
+  font-size 1.2em
+.footer-heading
+  serif()
+  uppercase()
+#footer-social-links
+  li
+    line-height 1
+  a
+    color dark_greenish
+    &:hover
+      color dark_purple
+.footer-list
+  line-height 1
+  li
+    margin ( line_height / 2 ) 0
+
+@media (min-width: 981px)
+
+  body
+    font-size font_size
+
+  #wrapper, #main-footer
+    center( 100%, 0 )
+  #wrapper
+    height 100%
+
+  #main-header
+    col( 2/9 )
+    text-align right
+    position fixed
+    bottom line_height
+  #image-wrapper
+    span( 7/9, 2/9 );
+    position relative
+
+  #tag-nav
+    margin-bottom line_height
+
+  #main-body
+    col( 5/9, 2/9 )
+    height 100%
+  #item-navs
+    col( 2/9 5/9 )
+    position relative
+    height 100%
+    text-align right
+  .item-nav
+    position absolute
+    opacity 0
+    width 100%
+  #items
+    col( 7/9 5/9 )
+    position relative
+    height 100%
+  .tag-items
+    position absolute
+    width 100%
+    opacity 0
+  .item
+    position absolute
+    width 100%
+
+  #main-footer
+    padding line_height * 2
+  #contact
+    float left
+  #sitemap
+    float right
+    text-align right
+  .footer-list
+    inline-block()
+    font-size 0.8em
+    vertical-align top
+    text-align left
+    margin-left line_height
+    width 15em
+
+  .bracket
+    position absolute
+    z-index 100
+    opacity 0
+
+  // pie_size = 20px
+  // #pie
+  //   display block
+  //   position absolute
+  //   bottom ( line_height / 2 )
+  //   right ( line_height / 2 )
+  //   width pie_size
+  //   height pie_size
+  //   font-size 10px
+  //   color #999
+  //   &:hover
+  //     color black
+  //   img
+  //     z-index 0      
+  // #pie img, #pie-icon
+  //   position absolute
+  //   width pie_size
+  //   height pie_size
+  // #pie-icon
+  //   icons()
+  //   z-index 200
+  //   text-align center
+  //   line-height pie_size
+  // #pie-right-a
+  //   z-index 100
+  // #pie-left-b
+  //   transform rotate( 180deg )
+
+@media (min-width: 981px) and (max-width: 1700px)
+  body
+    font-size font_size * 0.9
+
+@media (min-width: 981px) and (max-width: 1500px)
+  body
+    font-size font_size * 0.8
+  #main-body
+    col( 6/9, 2/9 )
+  #item-navs
+    col( 2/9 6/9 )
+  #items
+    col( 7/9 6/9 )
+
+@media (min-width: 981px) and (max-width: 1300px)
+  #social-links li
+    display block
+
+@media (min-width: 981px) and (max-width: 1100px)
+  #main-body
+    col( 7/9, 2/9 )
+  #item-navs
+    col( 2/9 7/9 )
+  #items
+    col( 7/9 7/9 )
+  .footer-list
+    width 10em
+
+@media (max-width: 980px)
+  body
+    font-size font_size * 3
+
+  #main-header
+    text-align center
+  #header-image
+    width 100%
+    height auto
+  #social-links
+    text-align center
+    li:first-child
+      margin-left 0
+  #tag-nav
+    margin-bottom ( line_height / 2 )
+    font-size 1.2em
+    line-height 1.5em
+
+  #item-navs
+    text-align center
+
+  .item-nav, .item
+    display none
+
+  #main-footer
+    padding line_height
+    font-size 0.8em
+  .footer-heading
+    text-align center
+  #contact
+    text-align center
+    margin-bottom line_height
+  #footer-social-links
+    inline-block()
+    text-align left
+  .footer-list
+    margin-bottom line_height

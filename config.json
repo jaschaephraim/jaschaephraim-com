@@ -1,0 +1,15 @@
+{
+
+  "tags": [
+    "code",
+    "music",
+    "film",
+    "writing",
+    "buddhist-chaplaincy"
+  ],
+
+  "browserify_noparse": [
+    "jquery"
+  ]
+
+}

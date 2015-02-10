@@ -1,0 +1,17 @@
+{
+  "name": "jaschaephraim-com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "SimpleStateManager": "~2.4.0",
+    "jquery": "~2.1.3",
+    "jquery-shift-heading-levels": "~1.0.2"
+  },
+  "resolutions": {
+    "SimpleStateManager": "~2.4.0"
+  }
+}
