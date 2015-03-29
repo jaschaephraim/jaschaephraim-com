@@ -272,6 +272,8 @@ code
   // #pie-left-b
   //   transform rotate( 180deg )
 
+// Larger than portrait mobile
+
 @media (min-width: 981px) and (max-width: 1700px)
   body
     font-size font_size * 0.9
@@ -300,6 +302,8 @@ code
   .footer-list
     width 10em
 
+// Portrait mobile or smaller
+
 @media (max-width: 980px)
   body
     font-size font_size * 3
@@ -323,6 +327,12 @@ code
 
   .item-nav, .item
     display none
+  .item
+    p, .article-link
+      padding-left line_height
+      padding-right line_height
+  .article-link
+    margin-bottom p_margin
 
   #main-footer
     padding line_height
