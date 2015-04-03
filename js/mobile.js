@@ -1,28 +1,41 @@
 var $ = require( 'jquery' );
 
-$( function() {
+var scroll_dur = 1000;
 
-  var $tag_tabs = $( '#tag-nav a' );
-  var $item_navs = $( '.item-nav' );
-  var $tag_items = $( '.tag-items' );
+module.exports = function ( tab_data ) {
 
-  $tag_tabs.each( function( i, tag_el ) {
+  var htmlbody = $( 'html, body' );
+  var $items = $( '.item' );
+  var $item_tabs = $( '.item-nav a' );
 
-    var $item_nav = $item_navs.eq( i );
-    var $items = $tag_items.eq( i ).children();
+  function scrollTo( $el ) {
+    htmlbody.animate( {
+      scrollTop: $el.offset().top
+    }, scroll_dur );
+  }
 
-    $( tag_el ).click( function() {
-      $item_navs.hide();
-      $item_nav.show();
-    } );
+  $.each( tab_data.tabs, function ( i, tab ) {
+    tab.transition = function () {
+      tab_data.$item_navs.hide();
+      $items.hide();
+      $item_tabs.removeClass( 'current' );
+      tab.$item_nav.show();
+      scrollTo( tab.$item_nav );
+    };
 
-    $item_nav.find( 'a' ).each( function( j, item_el ) {
-      $( item_el ).click( function() {
+    $.each( tab.items, function ( j, item ) {
+      item.transition = function () {
         $items.hide();
-        $items.eq( j ).show();
-      } );
+        item.$item.show();
+        scrollTo( item.$item );
+      };
     } );
-
   } );
 
-} );
+  if ( tab_data.parsed_hash ) {
+    var tab = tab_data.tabs[ tab_data.current_tag ];
+    tab.goTo();
+    if ( tab_data.parsed_hash.length > 1 )
+      tab.items[ tab.current_item ].goTo();
+  }
+};
