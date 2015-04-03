@@ -1,6 +1,8 @@
 var $ = require( 'jquery' );
 var ssm = require( 'SimpleStateManager' )( window );
 
+module.exports.current_tag = 0;
+
 var deferredInitState = $.Deferred();
 var deferredInitTabs = $.Deferred();
 $.when( deferredInitState, deferredInitTabs )
@@ -13,7 +15,6 @@ $.when( deferredInitState, deferredInitTabs )
 
 var tabs = [];
 var num_tags = 0;
-var current_tag = 0;
 
 $( function () {
 
@@ -39,7 +40,7 @@ $( function () {
     tab.$item_tabs = tab.$item_nav.find( 'a' );
     tab.$items = tab.$tag_item.find( '.item' );
     tab.goTo = function () {
-      current_tag = i;
+      module.exports.current_tag = i;
 
       $tag_tabs.removeClass( 'current' );
       tab.$tag_tab.addClass( 'current' );
@@ -77,11 +78,11 @@ $( function () {
   var parsed_hash;
   if ( hash ) {
     parsed_hash = hash.split( '/' );
-    current_tag = $tag_tabs.index(
+    module.exports.current_tag = $tag_tabs.index(
       $tag_tabs.filter( '[href="' + parsed_hash[ 0 ] + '"]' )
     );
     if ( parsed_hash.length > 1 ) {
-      var tab = tabs[ current_tag ];
+      var tab = tabs[ module.exports.current_tag ];
       var $item_tabs = tab.$item_tabs;
       tab.current_item = $item_tabs.index(
         $item_tabs.filter( '[href="' + hash + '"]' )
@@ -92,7 +93,6 @@ $( function () {
   deferredInitTabs.resolve( {
     tabs: tabs,
     num_tags: num_tags,
-    current_tag: current_tag,
     $tag_tabs: $tag_tabs,
     $item_navs: $item_navs,
     $tag_items: $tag_items,

@@ -1,4 +1,5 @@
 var $ = require( 'jquery' );
+var app = require( './app' );
 var bracket = require( './bracket' );
 
 var $window;
@@ -6,13 +7,11 @@ var $wrapper;
 
 var heights = {};
 var fade_dur = 200;
-var current_tag = 0;
 
 module.exports = function ( tab_data ) {
 
   var tabs = tab_data.tabs;
-  var num_tags = tab_data.num_tags;
-  var current_tag = tab_data.current_tag;
+  // var num_tags = tab_data.num_tags;
   var $tag_tabs = tab_data.$tag_tabs;
   var $item_navs = tab_data.$item_navs;
   var $tag_items = tab_data.$tag_items;
@@ -119,7 +118,7 @@ module.exports = function ( tab_data ) {
       for ( var i in tabs )
         tabs[ i ].update();
 
-      var tag = tabs[ current_tag ];
+      var tag = tabs[ app.current_tag ];
       var $nav = tag.$item_nav;
       var item = tag.items[ tag.current_item ];
       var $item = item.$item;
@@ -137,7 +136,7 @@ module.exports = function ( tab_data ) {
 
     },
     headerLoaded: function () {
-      tabs[ current_tag ].goTo();
+      tabs[ app.current_tag ].goTo();
       bracket.fadeIn( fade_dur );
     }
   };

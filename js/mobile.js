@@ -1,4 +1,5 @@
 var $ = require( 'jquery' );
+var app = require( './app' );
 
 var scroll_dur = 1000;
 
@@ -33,7 +34,7 @@ module.exports = function ( tab_data ) {
   } );
 
   if ( tab_data.parsed_hash ) {
-    var tab = tab_data.tabs[ tab_data.current_tag ];
+    var tab = tab_data.tabs[ app.current_tag ];
     tab.goTo();
     if ( tab_data.parsed_hash.length > 1 )
       tab.items[ tab.current_item ].goTo();
