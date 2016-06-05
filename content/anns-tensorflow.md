@@ -1,5 +1,5 @@
 ---
-title: Elementary Neural Networks with TensorFlow: Training Perceptrons to Do Boolean Logic
+title: "Elementary Neural Networks with TensorFlow: Training Perceptrons to Do Boolean Logic"
 date: 2016-06-04
 site: Medium
 url: https://medium.com/@jaschaephraim/elementary-neural-networks-with-tensorflow-c2593ad3d60b#.p9qrd1u8t
