@@ -1,6 +1,6 @@
 ---
 title: New Pantheon aka The Jascha Ephraim Memorial Library
-site: Vimeo
+link: View on Vimeo
 url: https://vimeo.com/album/2898746
 image:
     file: new-pantheon.jpg

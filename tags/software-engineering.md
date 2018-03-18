@@ -1,6 +1,9 @@
 ---
-title: Code
+title: Software Engineering
 content:
+    - gems
+    - gifs-com
+    - cargomatic
     - dnet
     - anns-tensorflow
     - lrserver

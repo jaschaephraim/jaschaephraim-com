@@ -1,7 +1,7 @@
 ---
 title: 'Dharma Talk: Ariyapariyesana Sutta'
 date: 2014-11-18
-site: SoundCloud
+link: Listen on SoundCloud
 url: https://soundcloud.com/jaschaephraim/ariyapariyesana-sutta
 image:
     file: ariyapariyesana-sutta.jpg

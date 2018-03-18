@@ -1,6 +1,6 @@
 ---
 title: Stars and Garters Theatre Company
-site: YouTube
+link: View on YouTube
 url: https://www.youtube.com/watch?v=Le158Y8wn04
 image:
     file: stars-and-garters.jpg

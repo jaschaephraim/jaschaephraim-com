@@ -1,7 +1,7 @@
 ---
 title: 'DNet: A Bayesian decision network application written in Java'
 date: 2010-12-16
-site: GitHub
+link: View on GitHub
 url: https://github.com/jaschaephraim/dnet
 image:
     file: dnet.jpg

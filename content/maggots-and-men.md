@@ -1,6 +1,6 @@
 ---
 title: Maggots and Men
-site: Justseeds
+link: View on Justseeds
 url: http://www.justseeds.org/other_artists/01maggotsmen.html
 image:
     file: maggots-and-men.jpg

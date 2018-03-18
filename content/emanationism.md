@@ -1,6 +1,6 @@
 ---
 title: Seven Characteristics of Emanationism
-site: Medium
+link: View on Medium
 url: https://medium.com/@jaschaephraim/seven-characteristics-of-emanationism-6f8697750357
 image:
     file: emanationism.jpg

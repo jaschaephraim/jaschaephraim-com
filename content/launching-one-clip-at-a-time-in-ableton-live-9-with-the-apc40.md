@@ -1,7 +1,7 @@
 ---
 title: Launching One Clip at a Time in Ableton Live 9 with the APC40
 date: 2014-05-25
-site: Medium
+link: View on Medium
 url: https://medium.com/python-language/d2b72985d2a9
 image:
     file: launching-one-clip-at-a-time-in-ableton-live-9-with-the-apc40.jpg

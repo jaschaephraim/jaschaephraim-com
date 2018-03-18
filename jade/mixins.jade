@@ -13,7 +13,7 @@ mixin article( item )
             else
               = image.creator
     != item.body
-    +link( item, 'View on ' + item.site, 'article-link' )
+    +link( item, item.link, 'article-link' )
 
 mixin link( item, text, clss )
   a( class=clss, href=item.url, target='_blank' )= text

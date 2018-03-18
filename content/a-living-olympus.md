@@ -1,6 +1,6 @@
 ---
 title: A Living Olympus
-site: Vimeo
+link: View on Vimeo
 url: https://vimeo.com/14709531
 image:
     file: a-living-olympus.jpg
