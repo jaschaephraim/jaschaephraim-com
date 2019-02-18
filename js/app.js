@@ -1,5 +1,5 @@
 var $ = require( 'jquery' );
-var ssm = require( 'SimpleStateManager' )( window );
+var ssm = require( 'simplestatemanager' )( window );
 
 module.exports.current_tag = 0;
 

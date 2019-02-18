@@ -7,11 +7,8 @@
     "bower_components"
   ],
   "dependencies": {
-    "SimpleStateManager": "~2.4.0",
     "jquery": "~2.1.3",
-    "jquery-shift-heading-levels": "~1.0.2"
-  },
-  "resolutions": {
-    "SimpleStateManager": "~2.4.0"
+    "jquery-shift-heading-levels": "~1.0.2",
+    "simplestatemanager": "~3.1.3"
   }
 }
