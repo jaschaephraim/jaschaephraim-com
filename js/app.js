@@ -117,4 +117,4 @@ ssm.addStates( [
     }
   }
 
-] ).ready();
+] );
